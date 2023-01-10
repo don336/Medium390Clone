@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1673363975049" clover="3.2.0">
+  <project timestamp="1673363975049" name="All files">
+    <metrics statements="102" coveredstatements="93" conditionals="14" coveredconditionals="13" methods="16" coveredmethods="13" elements="132" coveredelements="119" complexity="0" loc="102" ncloc="102" packages="9" files="12" classes="12"/>
+    <package name="src">
+      <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="app.js" path="C:\Users\Dom Breaker\Desktop\dev\Medium390Clone\Backend\src\app.js">
+        <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.controllers">
+      <metrics statements="45" coveredstatements="41" conditionals="12" coveredconditionals="11" methods="5" coveredmethods="5"/>
+      <file name="user.js" path="C:\Users\Dom Breaker\Desktop\dev\Medium390Clone\Backend\src\controllers\user.js">
+        <metrics statements="45" coveredstatements="41" conditionals="12" coveredconditionals="11" methods="5" coveredmethods="5"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="12" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="18" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="46" count="7" type="stmt"/>
+        <line num="47" count="7" type="stmt"/>
+        <line num="48" count="7" type="stmt"/>
+        <line num="50" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="55" count="6" type="stmt"/>
+        <line num="56" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="61" count="5" type="stmt"/>
+        <line num="63" count="5" type="stmt"/>
+        <line num="65" count="5" type="stmt"/>
+        <line num="67" count="5" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+        <line num="91" count="2" type="stmt"/>
+        <line num="93" count="2" type="stmt"/>
+        <line num="94" count="2" type="stmt"/>
+        <line num="95" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="101" count="1" type="stmt"/>
+        <line num="108" count="1" type="stmt"/>
+        <line num="117" count="2" type="stmt"/>
+        <line num="119" count="2" type="stmt"/>
+        <line num="120" count="2" type="stmt"/>
+        <line num="121" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="122" count="1" type="stmt"/>
+        <line num="126" count="1" type="stmt"/>
+        <line num="127" count="1" type="stmt"/>
+        <line num="138" count="1" type="stmt"/>
+        <line num="143" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.db">
+      <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+      <file name="db.js" path="C:\Users\Dom Breaker\Desktop\dev\Medium390Clone\Backend\src\db\db.js">
+        <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.middleware">
+      <metrics statements="11" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="checkAuth.js" path="C:\Users\Dom Breaker\Desktop\dev\Medium390Clone\Backend\src\middleware\checkAuth.js">
+        <metrics statements="9" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="6" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+      </file>
+      <file name="validate.js" path="C:\Users\Dom Breaker\Desktop\dev\Medium390Clone\Backend\src\middleware\validate.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.model">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="user.js" path="C:\Users\Dom Breaker\Desktop\dev\Medium390Clone\Backend\src\model\user.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.routes">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.js" path="C:\Users\Dom Breaker\Desktop\dev\Medium390Clone\Backend\src\routes\index.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.routes.api-v1">
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="auth.js" path="C:\Users\Dom Breaker\Desktop\dev\Medium390Clone\Backend\src\routes\api-v1\auth.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+      </file>
+      <file name="index.js" path="C:\Users\Dom Breaker\Desktop\dev\Medium390Clone\Backend\src\routes\api-v1\index.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="user.js" path="C:\Users\Dom Breaker\Desktop\dev\Medium390Clone\Backend\src\routes\api-v1\user.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.test">
+      <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+      <file name="index.js" path="C:\Users\Dom Breaker\Desktop\dev\Medium390Clone\Backend\src\test\index.js">
+        <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="8" count="11" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.test.TestData">
+      <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="userTestData.js" path="C:\Users\Dom Breaker\Desktop\dev\Medium390Clone\Backend\src\test\TestData\userTestData.js">
+        <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
+        <line num="20" count="12" type="stmt"/>
+        <line num="21" count="12" type="stmt"/>
+        <line num="22" count="12" type="stmt"/>
+        <line num="80" count="12" type="stmt"/>
+        <line num="84" count="12" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

@@ -89,32 +89,40 @@ class UserController {
 
   static async getUserProfile(req, res) {
     const { id } = req.params;
-    const foundUser = await User.findById({ _id: id });
 
-    if (!foundUser) {
+    try {
+      const foundUser = await User.findById({ _id: id });
+      if (!foundUser) {
+        return res.status(400).json({
+          msg: "User doesn't exist",
+        });
+      }
+      const { name, username, email, bio } = foundUser;
+      return res.status(200).json({
+        name,
+        username,
+        email,
+        bio,
+      });
+    } catch (error) {
       return res.status(400).json({
         msg: "User doesn't exist",
+        error
       });
     }
-    const { name, username, email, bio } = foundUser;
-    return res.status(200).json({
-      name,
-      username,
-      email,
-      bio,
-    });
+
   }
 
   static async updateUserProfile(req, res) {
     const { id } = req.params;
 
-    const foundUser = await User.findById({ _id: id });
-    if (!foundUser) {
-      return res.status(400).json({
-        msg: "User doesn't exist",
-      });
-    }
     try {
+      const foundUser = await User.findById({ _id: id });
+      if (!foundUser) {
+        return res.status(400).json({
+          msg: "User doesn't exist",
+        });
+      }
       const {username, email, bio, name} = req.body
       const updatedProfile = await User.updateOne(
           {_id:id},
@@ -131,11 +139,11 @@ class UserController {
         message: "Profile Updated!",
         updatedProfile,
       });
-    } catch (err) {
-      // return res.status(400).json({
-        
-      // });
-      console.log(err);
+    } catch (error) {
+      return res.status(400).json({
+        msg: "User doesn't exist",
+        error
+      });
     }
   }
 }
