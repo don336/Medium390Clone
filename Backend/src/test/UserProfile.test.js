@@ -35,7 +35,7 @@ describe("Create User Profile", function () {
 
     const token = login.body.token;
 
-    const res = await testBase.get("/user/12934934893249023").set("Authorization", token).send();
+    const res = await testBase.get("/user/user201").set("Authorization", token).send();
 
     expect(res.status).toBe(400);
     expect(res.body.msg).toBe("User doesn't exist");
@@ -50,7 +50,7 @@ describe("Create User Profile", function () {
     const token = login.body.token;
 
     const res = await testBase
-      .get(`/user/${uIds.uid1}`)
+      .get(`/user/User1`)
       .set("Authorization", token)
       .send();
 
@@ -71,14 +71,14 @@ describe("Create User Profile", function () {
     const token = login.body.token;
 
     const res = await testBase
-      .put(`/user/101010101010`)
+      .put(`/user/User109`)
       .set("Authorization", token)
       .send();
 
     expect(res.status).toBe(400);
     expect(res.body.msg).toBe("User doesn't exist");
   })
-  it("should update profile if user", async () =>{
+  it("should update profile of user", async () =>{
     const login = await testBase.post("/auth/user/signin").send({
       email: "user1@gmail.com",
       password: "12345678",
@@ -87,7 +87,7 @@ describe("Create User Profile", function () {
     const token = login.body.token;
 
     const res = await testBase
-      .put(`/user/${uIds.uid1}`)
+      .put(`/user/User1`)
       .set("Authorization", token)
       .send({
         bio: 'I love Development'

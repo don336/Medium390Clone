@@ -88,10 +88,9 @@ class UserController {
   }
 
   static async getUserProfile(req, res) {
-    const { id } = req.params;
 
     try {
-      const foundUser = await User.findById({ _id: id });
+      const foundUser = await User.findOne({ username: req.params.username });
       if (!foundUser) {
         return res.status(400).json({
           msg: "User doesn't exist",
@@ -114,10 +113,9 @@ class UserController {
   }
 
   static async updateUserProfile(req, res) {
-    const { id } = req.params;
 
     try {
-      const foundUser = await User.findById({ _id: id });
+      const foundUser = await User.findOne({ username: req.params.username});
       if (!foundUser) {
         return res.status(400).json({
           msg: "User doesn't exist",
@@ -125,7 +123,7 @@ class UserController {
       }
       const {username, email, bio, name} = req.body
       const updatedProfile = await User.updateOne(
-          {_id:id},
+          {username:req.params.username},
           {$set: {
             username,
             email,

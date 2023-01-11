@@ -4,7 +4,7 @@ import { checkAuth } from "../../middleware/checkAuth";
 import user from "../../model/user";
 const userRoute = express();
 
-userRoute.get("/:id", checkAuth, UserController.getUserProfile);
-userRoute.put("/:id",checkAuth, UserController.updateUserProfile)
+userRoute.get("/:username", checkAuth, UserController.getUserProfile);
+userRoute.put("/:username",checkAuth, UserController.updateUserProfile)
 
 export default userRoute;
