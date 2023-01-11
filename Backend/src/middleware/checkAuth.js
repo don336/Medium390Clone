@@ -10,9 +10,9 @@ export const checkAuth = (req, res, next) => {
   try {
     const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
 
-    req.user = decoded.user;
+    req.user = decoded;
     next();
   } catch (err) {
-    res.status(401).json({ msg: "Token is not valid" });
+    res.status(401).json({ msg: "Invalid Token" });
   }
 };
