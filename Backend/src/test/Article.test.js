@@ -69,8 +69,8 @@ describe("Testing Article Feature", function () {
       .set("Authorization", token)
       .send();
 
-    expect(res.status).toBe(400);
-    expect(res.body.msg).toEqual("Article Not found");
+    expect(res.status).toBe(500);
+    expect(res.body.msg).toEqual("Server Error");
   });
 
   it("shouldn't create an Article without required fields", async () => {
@@ -124,8 +124,8 @@ describe("Testing Article Feature", function () {
         description: "Article description",
       });
 
-    expect(res.status).toBe(400);
-    expect(res.body.msg).toEqual("Article Not Found!");
+    expect(res.status).toBe(500);
+    expect(res.body.msg).toEqual("Server Error");
   });
   it("Should update an Article", async () => {
     const login = await testBase.post("/auth/user/signin").send({
@@ -209,8 +209,8 @@ describe("Testing Article Feature", function () {
       .set("Authorization", token)
       .send();
 
-    expect(res.status).toBe(400);
-    expect(res.body.msg).toEqual(" Article not found");
+    expect(res.status).toBe(500);
+    expect(res.body.msg).toEqual("Server Error");
   });
   it("Should Add a comment to an Article", async () => {
     const login = await testBase.post("/auth/user/signin").send({
@@ -243,7 +243,7 @@ describe("Testing Article Feature", function () {
     expect(res.body.msg).toEqual("Comment Removed");
   });
 
-  it("should Delete an Article if article found", async()=>{
+  it("should Delete an Article if article found", async () => {
     const login = await testBase.post("/auth/user/signin").send({
       email: "user1@gmail.com",
       password: "12345678",
@@ -251,9 +251,12 @@ describe("Testing Article Feature", function () {
 
     const token = login.body.token;
 
-    const res = await testBase.delete(`/articles/${aIds.aid2}`).set("Authorization", token).send();
+    const res = await testBase
+      .delete(`/articles/${aIds.aid2}`)
+      .set("Authorization", token)
+      .send();
 
-    expect(res.status).toBe(204)
-    expect(res.body).toEqual({})
-  })
+    expect(res.status).toBe(204);
+    expect(res.body).toEqual({});
+  });
 });

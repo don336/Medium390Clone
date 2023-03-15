@@ -88,7 +88,6 @@ class UserController {
   }
 
   static async getUserProfile(req, res) {
-
     try {
       const foundUser = await User.findOne({ username: req.params.username });
       if (!foundUser) {
@@ -104,32 +103,32 @@ class UserController {
         bio,
       });
     } catch (error) {
-      return res.status(400).json({
-        msg: "User doesn't exist",
-        error
+      return res.status(500).json({
+        msg: "Server Error",
+        err: error.message,
       });
     }
-
   }
 
   static async updateUserProfile(req, res) {
-
     try {
-      const foundUser = await User.findOne({ username: req.params.username});
+      const foundUser = await User.findOne({ username: req.params.username });
       if (!foundUser) {
         return res.status(400).json({
           msg: "User doesn't exist",
         });
       }
-      const {username, email, bio, name} = req.body
+      const { username, email, bio, name } = req.body;
       const updatedProfile = await User.updateOne(
-          {username:req.params.username},
-          {$set: {
+        { username: req.params.username },
+        {
+          $set: {
             username,
             email,
             bio,
-            name
-          }},
+            name,
+          },
+        },
         { new: true }
       );
 
@@ -138,9 +137,9 @@ class UserController {
         updatedProfile,
       });
     } catch (error) {
-      return res.status(400).json({
-        msg: "User doesn't exist",
-        error
+      return res.status(500).json({
+        msg: "Server Error",
+        err: error.message,
       });
     }
   }
