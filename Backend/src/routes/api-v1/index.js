@@ -1,11 +1,11 @@
-import express from "express";
+import { Router } from "express";
 import userAuth from "./auth.js";
 import userRoute from "./user.js";
-import articleRoute from './article'
+import articleRoute from "./article.js";
 
-const routers = express();
-routers.use("/auth/user/", userAuth);
-routers.use("/user/", userRoute)
-routers.use("/articles/", articleRoute)
+const apiv1Routes = Router();
+apiv1Routes.use("/auth/user/", userAuth);
+apiv1Routes.use("/user/", userRoute);
+apiv1Routes.use("/articles/", articleRoute);
 
-export default routers;
+export default apiv1Routes;

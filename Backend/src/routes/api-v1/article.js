@@ -1,8 +1,8 @@
-import express from "express";
-import ArticleController from "../../controllers/article";
-import { checkAuth } from "../../middleware/checkAuth";
+import {Router} from "express";
+import ArticleController from "../../controllers/article.js";
+import { checkAuth } from "../../middleware/checkAuth.js";
 
-const articleRoute = express();
+const articleRoute = Router();
 
 articleRoute.get("/", ArticleController.getArticles);
 

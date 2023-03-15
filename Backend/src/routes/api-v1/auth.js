@@ -1,11 +1,11 @@
-import express from "express";
-import UserController from "../../controllers/user";
+import {Router} from "express";
+import UserController from "../../controllers/user.js";
 import validate from "../../middleware/validate.js";
 
-const router = express();
+const baseRouter = Router();
 
-router.post("/signup", validate.userRegistration, UserController.registerUser);
-router.post("/signin", validate.signIn, UserController.signIn);
-router.post("/signout", UserController.signOut);
+baseRouter.post("/signup", validate.userRegistration, UserController.registerUser);
+baseRouter.post("/signin", validate.signIn, UserController.signIn);
+baseRouter.post("/signout", UserController.signOut);
 
-export default router;
+export default baseRouter;

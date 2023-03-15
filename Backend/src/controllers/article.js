@@ -1,14 +1,13 @@
-import Articles from "../model/articles";
+import Articles from "../model/articles.js";
 
 class ArticleController {
   static async getArticles(req, res) {
     try {
       const articles = await Articles.find();
-
       return res.status(200).json(articles);
     } catch (error) {
-      return res.status(400).json({
-        err: error,
+      return res.status(500).json({
+        err: error.message,
       });
     }
   }
@@ -22,20 +21,20 @@ class ArticleController {
           msg: "Article Not found",
         });
       }
-      return res.status(200).json({ 
+      return res.status(200).json({
         message: "Article Found",
-        foundArticle
+        foundArticle,
       });
     } catch (error) {
-      return res.status(400).json({
-        msg: "Article Not found",
+      return res.status(500).json({
+        msg: "Server Error",
+        err: error.message,
       });
     }
   }
 
   static async createArticle(req, res) {
     const { title, description } = req.body;
-
     try {
       if (!title || !description) {
         res.status(422).json({ msg: "Fill all required Fields" });
@@ -50,7 +49,7 @@ class ArticleController {
         newArticle,
       });
     } catch (error) {
-      console.log(error);
+      return res.status(500);
     }
   }
 
@@ -83,9 +82,9 @@ class ArticleController {
         updatedArticle,
       });
     } catch (error) {
-      return res.status(400).json({
-        msg: "Article Not Found!",
-        error,
+      return res.status(500).json({
+        msg: "Server Error",
+        err: error.message,
       });
     }
   }
@@ -107,7 +106,10 @@ class ArticleController {
         likes,
       });
     } catch (error) {
-      return res.status(400).json({ msg: " Article not found" });
+      return res.status(500).json({
+        msg: "Server Error",
+        err: error.message,
+      });
     }
   }
   static async commentOnArticle(req, res) {
@@ -175,10 +177,13 @@ class ArticleController {
 
       return res.status(204).json({
         Message: "Article Has Been Deleted!",
-        article
+        article,
       });
     } catch (error) {
-      return error;
+      return res.status(500).json({
+        msg: "Server Error",
+        err: error.message,
+      });
     }
   }
 }
